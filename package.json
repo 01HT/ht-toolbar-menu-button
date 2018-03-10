@@ -9,7 +9,7 @@
     "@polymer/iron-iconset-svg": "@next",
     "@polymer/paper-icon-button": "@next",
     "@polymer/paper-styles": "@next",
-    "@polymer/polymer": "@next"
+    "@polymer/lit-element": "@next"
   },
   "resolutions": {
     "@polymer/paper-styles": "@next"
