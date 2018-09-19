@@ -5,7 +5,7 @@ import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolabarMenuButton extends LitElement {
-  _render() {
+  render() {
     return html`
       <style>
         :host {
@@ -25,8 +25,11 @@ class HTToolabarMenuButton extends LitElement {
         </defs>
     </svg>
 </iron-iconset-svg>
-<paper-icon-button icon="ht-toolbar-menu-button-icons:menu" on-click=${e => {this.toggle(e)}}></paper-icon-button>
-  `}
+<paper-icon-button icon="ht-toolbar-menu-button-icons:menu" @click=${e => {
+      this.toggle(e);
+    }}></paper-icon-button>
+  `;
+  }
   static get is() {
     return "ht-toolbar-menu-button";
   }
