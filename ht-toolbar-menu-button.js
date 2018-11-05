@@ -27,7 +27,7 @@ class HTToolabarMenuButton extends LitElement {
 </iron-iconset-svg>
 <paper-icon-button icon="ht-toolbar-menu-button-icons:menu" @click=${e => {
       this.toggle(e);
-    }}></paper-icon-button>
+    }} alt="Menu button"></paper-icon-button>
   `;
   }
   static get is() {
