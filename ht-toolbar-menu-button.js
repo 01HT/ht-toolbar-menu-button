@@ -1,23 +1,24 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolabarMenuButton extends LitElement {
+  static styles = css`<style>
+    :host {
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    paper-icon-button {
+      color: var(--secondary-text-color);
+    }
+  </style>`;
+
   render() {
     return html`
-      <style>
-        :host {
-            display: block;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        paper-icon-button {
-          color: var(--secondary-text-color);
-        }
-      </style>
       <iron-iconset-svg size="24" name="ht-toolbar-menu-button-icons">
     <svg>
         <defs>
@@ -25,13 +26,10 @@ class HTToolabarMenuButton extends LitElement {
         </defs>
     </svg>
 </iron-iconset-svg>
-<paper-icon-button icon="ht-toolbar-menu-button-icons:menu" @click=${e => {
+<paper-icon-button icon="ht-toolbar-menu-button-icons:menu" @click="${e => {
       this.toggle(e);
-    }} alt="Menu button"></paper-icon-button>
+    }}" alt="Menu button"></paper-icon-button>
   `;
-  }
-  static get is() {
-    return "ht-toolbar-menu-button";
   }
 
   toggle(e) {
@@ -44,4 +42,4 @@ class HTToolabarMenuButton extends LitElement {
   }
 }
 
-customElements.define(HTToolabarMenuButton.is, HTToolabarMenuButton);
+customElements.define("ht-toolbar-menu-button", HTToolabarMenuButton);
