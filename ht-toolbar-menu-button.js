@@ -4,18 +4,19 @@ import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
-class HTToolabarMenuButton extends LitElement {
-  static styles = css`<style>
-    :host {
-        display: block;
-        position: relative;
-        box-sizing: border-box;
-    }
+import { stylesBasicWebcomponents } from "@01ht/ht-theme/styles";
 
-    paper-icon-button {
-      color: var(--secondary-text-color);
-    }
-  </style>`;
+class HTToolabarMenuButton extends LitElement {
+  static get styles() {
+    return [
+      stylesBasicWebcomponents,
+      css`
+        paper-icon-button {
+          color: var(--secondary-text-color);
+        }
+      `
+    ];
+  }
 
   render() {
     return html`
